@@ -39,5 +39,27 @@ let limeGreen = Color(hue: 106, saturation: 64, brightness: 73, alpha: 100)
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
  */
+// draw green background
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+canvas.fillColor = limeGreen
+canvas.drawRectangle(at:Point(x:0, y:0), width: 400, height: 600, anchoredBy: AnchorPosition.bottomLeft, borderWidth: 0)
+
+// loop for black circle
+canvas.drawShapesWithBorders = true
+canvas.drawShapesWithFill = false
+
+for x in stride (from:0, through: 400, by: 40){
+    for y in stride (from:0, through:400, by: 40){
+        canvas.drawEllipse
+    }
+}
+
+
+
+
+
+
+
 PlaygroundPage.current.liveView = canvas
 
