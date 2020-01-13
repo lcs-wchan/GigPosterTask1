@@ -64,10 +64,12 @@ canvas.drawRectangle(at:Point(x:0, y:400), width: 400, height: 200, anchoredBy: 
 //draw white circles
 canvas.drawShapesWithBorders = false
 canvas.drawShapesWithFill = true
+var a = 360
+var b = 0
 for y in stride (from: 40, through: 360, by: 40){
-    for x in stride (from:40, through:360, by:40){
-        canvas.drawEllipse(at: Point(x:x, y:y), width: 35, height: 35)
+    for x in stride (from:40, through:a, by:40){
         canvas.fillColor = offWhite
+        canvas.drawEllipse(at: Point(x:x, y:y), width: 35, height: 35)
     }
 }
 
