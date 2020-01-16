@@ -68,9 +68,11 @@ var a = 360
 var b = 0
 for y in stride (from: 40, through: 360, by: 40){
     for x in stride (from:40, through:a, by:40){
+        if x+y<425 {
         canvas.fillColor = offWhite
         canvas.drawEllipse(at: Point(x:x, y:y), width: 35, height: 35)
     }
+}
 }
 
 
