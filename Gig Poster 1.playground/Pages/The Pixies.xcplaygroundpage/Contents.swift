@@ -45,6 +45,11 @@ canvas.drawShapesWithFill = true
 canvas.fillColor = limeGreen
 canvas.drawRectangle(at:Point(x:0, y:0), width: 400, height: 600, anchoredBy: AnchorPosition.bottomLeft, borderWidth: 0)
 
+// draw black background
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+canvas.drawRectangle(at:Point(x:20, y:20), width: 380, height: 380, anchoredBy: AnchorPosition.bottomLeft, borderWidth: 0)
+
 // loop for black circle
 canvas.drawShapesWithBorders = true
 canvas.drawShapesWithFill = false
@@ -55,19 +60,23 @@ for x in stride (from:0, through: 400, by: 40){
     }
 }
 
+
 // draw green background
 canvas.drawShapesWithBorders = false
 canvas.drawShapesWithFill = true
 canvas.fillColor = limeGreen
 canvas.drawRectangle(at:Point(x:0, y:400), width: 400, height: 200, anchoredBy: AnchorPosition.bottomLeft, borderWidth: 0)
 
+// draw rectangle
+canvas.drawShapesWithFill = true
+canvas.fillColor = Color.black
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 400)
+
 //draw white circles
 canvas.drawShapesWithBorders = false
 canvas.drawShapesWithFill = true
-var a = 360
-var b = 0
 for y in stride (from: 40, through: 360, by: 40){
-    for x in stride (from:40, through:a, by:40){
+    for x in stride (from:40, through:360, by:40){
         if x+y<425 {
         canvas.fillColor = offWhite
         canvas.drawEllipse(at: Point(x:x, y:y), width: 35, height: 35)
@@ -75,6 +84,29 @@ for y in stride (from: 40, through: 360, by: 40){
 }
 }
 
+// draw green half circle
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+for y in stride (from: 0, through: 400, by: 40){
+    for x in stride (from:0, through:400, by:40){
+        if x<20 || y<20 || x>=380 || y>=380 {
+        canvas.fillColor = limeGreen
+        canvas.drawEllipse(at: Point(x:x, y:y), width: 35, height: 35)
+    }
+}
+}
+
+//draw green circles
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+for y in stride (from: 40, through: 360, by: 40){
+    for x in stride (from:40, through:360, by:40){
+        if x+y>425 {
+        canvas.fillColor = limeGreen
+        canvas.drawEllipse(at: Point(x:x, y:y), width: 35, height: 35)
+    }
+}
+}
 
 // text
 // type text satudray
